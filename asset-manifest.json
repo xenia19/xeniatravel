@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/xeniatravel/static/css/main.21bda7e3.chunk.css",
-    "main.js": "/xeniatravel/static/js/main.9de126bc.chunk.js",
-    "main.js.map": "/xeniatravel/static/js/main.9de126bc.chunk.js.map",
+    "main.css": "/xeniatravel/static/css/main.64968bc5.chunk.css",
+    "main.js": "/xeniatravel/static/js/main.754beef6.chunk.js",
+    "main.js.map": "/xeniatravel/static/js/main.754beef6.chunk.js.map",
     "runtime-main.js": "/xeniatravel/static/js/runtime-main.d11d7e80.js",
     "runtime-main.js.map": "/xeniatravel/static/js/runtime-main.d11d7e80.js.map",
     "static/css/2.34c9b3d3.chunk.css": "/xeniatravel/static/css/2.34c9b3d3.chunk.css",
     "static/js/2.9e9c3d9a.chunk.js": "/xeniatravel/static/js/2.9e9c3d9a.chunk.js",
     "static/js/2.9e9c3d9a.chunk.js.map": "/xeniatravel/static/js/2.9e9c3d9a.chunk.js.map",
     "index.html": "/xeniatravel/index.html",
-    "precache-manifest.b3d6905a33aed79a3a17e7ed34e386f5.js": "/xeniatravel/precache-manifest.b3d6905a33aed79a3a17e7ed34e386f5.js",
+    "precache-manifest.b74c94f490d164614d6b70f7b6ed8e49.js": "/xeniatravel/precache-manifest.b74c94f490d164614d6b70f7b6ed8e49.js",
     "service-worker.js": "/xeniatravel/service-worker.js",
     "static/css/2.34c9b3d3.chunk.css.map": "/xeniatravel/static/css/2.34c9b3d3.chunk.css.map",
-    "static/css/main.21bda7e3.chunk.css.map": "/xeniatravel/static/css/main.21bda7e3.chunk.css.map",
+    "static/css/main.64968bc5.chunk.css.map": "/xeniatravel/static/css/main.64968bc5.chunk.css.map",
     "static/js/2.9e9c3d9a.chunk.js.LICENSE": "/xeniatravel/static/js/2.9e9c3d9a.chunk.js.LICENSE",
     "static/media/main.sass": "/xeniatravel/static/media/43.56533e8a.jpg",
     "static/media/alpaca.jpg": "/xeniatravel/static/media/alpaca.63eab5af.jpg",
@@ -51,7 +51,7 @@
     "static/js/runtime-main.d11d7e80.js",
     "static/css/2.34c9b3d3.chunk.css",
     "static/js/2.9e9c3d9a.chunk.js",
-    "static/css/main.21bda7e3.chunk.css",
-    "static/js/main.9de126bc.chunk.js"
+    "static/css/main.64968bc5.chunk.css",
+    "static/js/main.754beef6.chunk.js"
   ]
 }
