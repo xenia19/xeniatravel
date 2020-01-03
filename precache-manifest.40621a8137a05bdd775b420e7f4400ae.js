@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ea5c4a9c867034f8da1c72914ca751f3",
+    "revision": "f61924477226271aa74da4a2638547f4",
     "url": "/xeniatravel/index.html"
   },
   {
-    "revision": "e5346fd6f2da529781f1",
+    "revision": "633fab2c9a8aa9618fd1",
     "url": "/xeniatravel/static/css/2.34c9b3d3.chunk.css"
   },
   {
-    "revision": "0415f34fc2dc248021ab",
+    "revision": "5b65da52cb2e493b5f07",
     "url": "/xeniatravel/static/css/main.7e46c39c.chunk.css"
   },
   {
-    "revision": "e5346fd6f2da529781f1",
-    "url": "/xeniatravel/static/js/2.ec6372f4.chunk.js"
+    "revision": "633fab2c9a8aa9618fd1",
+    "url": "/xeniatravel/static/js/2.05a59f23.chunk.js"
   },
   {
     "revision": "8dbc28b25aa4971eb27411d63f6aa7d3",
-    "url": "/xeniatravel/static/js/2.ec6372f4.chunk.js.LICENSE"
+    "url": "/xeniatravel/static/js/2.05a59f23.chunk.js.LICENSE"
   },
   {
-    "revision": "0415f34fc2dc248021ab",
-    "url": "/xeniatravel/static/js/main.8df992e6.chunk.js"
+    "revision": "5b65da52cb2e493b5f07",
+    "url": "/xeniatravel/static/js/main.dedddce7.chunk.js"
   },
   {
     "revision": "4504c2e532cf4274c685",
