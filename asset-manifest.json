@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/xeniatravel/static/css/main.7e46c39c.chunk.css",
-    "main.js": "/xeniatravel/static/js/main.1bde4960.chunk.js",
-    "main.js.map": "/xeniatravel/static/js/main.1bde4960.chunk.js.map",
+    "main.js": "/xeniatravel/static/js/main.b8ad22ad.chunk.js",
+    "main.js.map": "/xeniatravel/static/js/main.b8ad22ad.chunk.js.map",
     "runtime-main.js": "/xeniatravel/static/js/runtime-main.d11d7e80.js",
     "runtime-main.js.map": "/xeniatravel/static/js/runtime-main.d11d7e80.js.map",
     "static/css/2.34c9b3d3.chunk.css": "/xeniatravel/static/css/2.34c9b3d3.chunk.css",
     "static/js/2.102166fe.chunk.js": "/xeniatravel/static/js/2.102166fe.chunk.js",
     "static/js/2.102166fe.chunk.js.map": "/xeniatravel/static/js/2.102166fe.chunk.js.map",
     "index.html": "/xeniatravel/index.html",
-    "precache-manifest.1f334640a744e1187e2bc1a50bb036da.js": "/xeniatravel/precache-manifest.1f334640a744e1187e2bc1a50bb036da.js",
+    "precache-manifest.5f399240610b6b0a3c5c61accacce8f2.js": "/xeniatravel/precache-manifest.5f399240610b6b0a3c5c61accacce8f2.js",
     "service-worker.js": "/xeniatravel/service-worker.js",
     "static/css/2.34c9b3d3.chunk.css.map": "/xeniatravel/static/css/2.34c9b3d3.chunk.css.map",
     "static/css/main.7e46c39c.chunk.css.map": "/xeniatravel/static/css/main.7e46c39c.chunk.css.map",
@@ -52,6 +52,6 @@
     "static/css/2.34c9b3d3.chunk.css",
     "static/js/2.102166fe.chunk.js",
     "static/css/main.7e46c39c.chunk.css",
-    "static/js/main.1bde4960.chunk.js"
+    "static/js/main.b8ad22ad.chunk.js"
   ]
 }
