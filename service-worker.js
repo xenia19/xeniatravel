@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/xeniatravel/precache-manifest.40621a8137a05bdd775b420e7f4400ae.js"
+  "/xeniatravel/precache-manifest.9cde7501bcec6f4e1adc9e7c3ccdadd8.js"
 );
 
 self.addEventListener('message', (event) => {
