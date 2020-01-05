@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/xeniatravel/static/css/main.abbcdd87.chunk.css",
-    "main.js": "/xeniatravel/static/js/main.a22b9581.chunk.js",
-    "main.js.map": "/xeniatravel/static/js/main.a22b9581.chunk.js.map",
+    "main.js": "/xeniatravel/static/js/main.1c96591e.chunk.js",
+    "main.js.map": "/xeniatravel/static/js/main.1c96591e.chunk.js.map",
     "runtime-main.js": "/xeniatravel/static/js/runtime-main.d11d7e80.js",
     "runtime-main.js.map": "/xeniatravel/static/js/runtime-main.d11d7e80.js.map",
     "static/css/2.34c9b3d3.chunk.css": "/xeniatravel/static/css/2.34c9b3d3.chunk.css",
-    "static/js/2.0c6ba3f4.chunk.js": "/xeniatravel/static/js/2.0c6ba3f4.chunk.js",
-    "static/js/2.0c6ba3f4.chunk.js.map": "/xeniatravel/static/js/2.0c6ba3f4.chunk.js.map",
+    "static/js/2.d2e3fef0.chunk.js": "/xeniatravel/static/js/2.d2e3fef0.chunk.js",
+    "static/js/2.d2e3fef0.chunk.js.map": "/xeniatravel/static/js/2.d2e3fef0.chunk.js.map",
     "index.html": "/xeniatravel/index.html",
-    "precache-manifest.4ec3e4be31ddbca45ddf0abd26d13f0e.js": "/xeniatravel/precache-manifest.4ec3e4be31ddbca45ddf0abd26d13f0e.js",
+    "precache-manifest.e9e829e70d54b4691498005137432e70.js": "/xeniatravel/precache-manifest.e9e829e70d54b4691498005137432e70.js",
     "service-worker.js": "/xeniatravel/service-worker.js",
     "static/css/2.34c9b3d3.chunk.css.map": "/xeniatravel/static/css/2.34c9b3d3.chunk.css.map",
     "static/css/main.abbcdd87.chunk.css.map": "/xeniatravel/static/css/main.abbcdd87.chunk.css.map",
-    "static/js/2.0c6ba3f4.chunk.js.LICENSE": "/xeniatravel/static/js/2.0c6ba3f4.chunk.js.LICENSE",
+    "static/js/2.d2e3fef0.chunk.js.LICENSE": "/xeniatravel/static/js/2.d2e3fef0.chunk.js.LICENSE",
     "static/media/main.sass": "/xeniatravel/static/media/43.56533e8a.jpg",
     "static/media/alpaca.jpg": "/xeniatravel/static/media/alpaca.63eab5af.jpg",
     "static/media/argentina_04.jpg": "/xeniatravel/static/media/argentina_04.97c13d24.jpg",
@@ -50,8 +50,8 @@
   "entrypoints": [
     "static/js/runtime-main.d11d7e80.js",
     "static/css/2.34c9b3d3.chunk.css",
-    "static/js/2.0c6ba3f4.chunk.js",
+    "static/js/2.d2e3fef0.chunk.js",
     "static/css/main.abbcdd87.chunk.css",
-    "static/js/main.a22b9581.chunk.js"
+    "static/js/main.1c96591e.chunk.js"
   ]
 }
