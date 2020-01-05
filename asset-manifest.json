@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/xeniatravel/static/css/main.4e103cea.chunk.css",
-    "main.js": "/xeniatravel/static/js/main.45bc77eb.chunk.js",
-    "main.js.map": "/xeniatravel/static/js/main.45bc77eb.chunk.js.map",
+    "main.css": "/xeniatravel/static/css/main.0a5995cb.chunk.css",
+    "main.js": "/xeniatravel/static/js/main.2195a1cc.chunk.js",
+    "main.js.map": "/xeniatravel/static/js/main.2195a1cc.chunk.js.map",
     "runtime-main.js": "/xeniatravel/static/js/runtime-main.d11d7e80.js",
     "runtime-main.js.map": "/xeniatravel/static/js/runtime-main.d11d7e80.js.map",
     "static/css/2.34c9b3d3.chunk.css": "/xeniatravel/static/css/2.34c9b3d3.chunk.css",
-    "static/js/2.219e70e2.chunk.js": "/xeniatravel/static/js/2.219e70e2.chunk.js",
-    "static/js/2.219e70e2.chunk.js.map": "/xeniatravel/static/js/2.219e70e2.chunk.js.map",
+    "static/js/2.0c6ba3f4.chunk.js": "/xeniatravel/static/js/2.0c6ba3f4.chunk.js",
+    "static/js/2.0c6ba3f4.chunk.js.map": "/xeniatravel/static/js/2.0c6ba3f4.chunk.js.map",
     "index.html": "/xeniatravel/index.html",
-    "precache-manifest.47a5d280e16a16554a4dc541766e7a47.js": "/xeniatravel/precache-manifest.47a5d280e16a16554a4dc541766e7a47.js",
+    "precache-manifest.df63d33262180e3e6d2039f657cd21dd.js": "/xeniatravel/precache-manifest.df63d33262180e3e6d2039f657cd21dd.js",
     "service-worker.js": "/xeniatravel/service-worker.js",
     "static/css/2.34c9b3d3.chunk.css.map": "/xeniatravel/static/css/2.34c9b3d3.chunk.css.map",
-    "static/css/main.4e103cea.chunk.css.map": "/xeniatravel/static/css/main.4e103cea.chunk.css.map",
-    "static/js/2.219e70e2.chunk.js.LICENSE": "/xeniatravel/static/js/2.219e70e2.chunk.js.LICENSE",
+    "static/css/main.0a5995cb.chunk.css.map": "/xeniatravel/static/css/main.0a5995cb.chunk.css.map",
+    "static/js/2.0c6ba3f4.chunk.js.LICENSE": "/xeniatravel/static/js/2.0c6ba3f4.chunk.js.LICENSE",
     "static/media/main.sass": "/xeniatravel/static/media/43.56533e8a.jpg",
     "static/media/alpaca.jpg": "/xeniatravel/static/media/alpaca.63eab5af.jpg",
     "static/media/argentina_04.jpg": "/xeniatravel/static/media/argentina_04.97c13d24.jpg",
@@ -50,8 +50,8 @@
   "entrypoints": [
     "static/js/runtime-main.d11d7e80.js",
     "static/css/2.34c9b3d3.chunk.css",
-    "static/js/2.219e70e2.chunk.js",
-    "static/css/main.4e103cea.chunk.css",
-    "static/js/main.45bc77eb.chunk.js"
+    "static/js/2.0c6ba3f4.chunk.js",
+    "static/css/main.0a5995cb.chunk.css",
+    "static/js/main.2195a1cc.chunk.js"
   ]
 }
