@@ -1,9 +1,4 @@
-/* ============================================
-   XENIA TRAVELS - ПОЛНОСТЬЮ АДАПТИВНЫЙ CSS
-   Переработано для всех размеров экранов
-   ============================================ */
 
-/* === БАЗОВЫЕ СТИЛИ === */
 html {
   scroll-behavior: smooth;
 }
@@ -25,30 +20,29 @@ body {
   background: #f2ebe8;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
 /* === ГЛАВНЫЙ ТЕКСТ === */
 .main_text {
   text-align: center;
-  position: relative;
-  top: auto;
-  left: auto;
-  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
   padding: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .main_text h1 {
   font-family: 'Bad Script', cursive;
-  font-size: clamp(28px, 8vw, 60px);
+  font-size: clamp(28px, 6vw, 55px);
   letter-spacing: 2px;
   z-index: 100;
   margin: 0;
   line-height: 1.3;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
 }
 
 .main_text h1:focus,
@@ -66,31 +60,31 @@ body {
 .button_country {
   text-align: center;
   position: relative;
-  top: auto;
-  left: auto;
   cursor: pointer;
   border: 1px solid #000;
   border-radius: 35px;
   padding: 5px 30px;
   width: auto;
-  margin-top: 20px;
+  display: inline-block;
+  margin-top: 15px;
   transition: all 0.3s ease;
-  background: transparent;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(5px);
 }
 
 .button_country:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255,255,255,0.9);
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .button_country h2 {
   font-family: 'Lora', serif;
-  font-size: clamp(14px, 3vw, 25px);
+  font-size: clamp(14px, 3vw, 22px);
   margin: 10px 0;
 }
 
 /* === ДЕКОРАТИВНЫЕ ИЗОБРАЖЕНИЯ (Hero) === */
-/* Все декоративные картинки скрыты по умолчанию, показываем только на больших экранах */
 .machu,
 .mar,
 .plane,
@@ -104,6 +98,7 @@ body {
   position: absolute;
   display: none;
   pointer-events: none;
+  transition: transform 0.3s ease;
 }
 
 /* === МЕНЮ === */
@@ -144,7 +139,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   line-height: 23px;
   padding: 5px 10px;
-  font-size: clamp(10px, 2vw, 14px);
+  font-size: clamp(11px, 2vw, 14px);
   letter-spacing: 1px;
 }
 
@@ -239,12 +234,8 @@ img.emoji {
 }
 
 @keyframes symbol {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
 }
 
 .map .argentina,
@@ -620,38 +611,31 @@ img.emoji {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+  justify-items: center;
   border-top: 1px dotted #ddd;
   margin-top: 30px;
   padding: 30px 20px 40px;
-  gap: 30px;
+  gap: 20px;
+}
+
+.footer_map {
+  text-align: center;
 }
 
 .footer_map img {
   max-width: 100%;
-  width: 350px;
+  width: 300px;
   height: auto;
 }
 
-.footer_map,
-.footer_social,
-.random {
-  text-align: center;
-}
-
-.footer_map h2,
-.footer_social h2,
-.random h2 {
+.footer_map h2 {
   font-family: 'Montserrat', sans-serif;
   color: #565050;
   font-size: clamp(14px, 2.5vw, 18px);
 }
 
 .footer_map a,
-.footer_map p,
-.footer_social a,
-.footer_social p,
-.random a,
-.random p {
+.footer_map p {
   font-family: 'Montserrat', sans-serif;
   color: #565050;
   text-decoration: none;
@@ -659,19 +643,35 @@ img.emoji {
   display: block;
 }
 
-.social_grid {
-  font-family: 'Montserrat', sans-serif;
-  color: #565050;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  font-size: clamp(24px, 4vw, 29px);
+/* СКРЫВАЕМ "Подпишись" и соцсети */
+.footer_social {
+  display: none !important;
 }
 
+/* Случайная цитата - оставляем, но делаем компактнее */
+.random {
+  text-align: center;
+  padding: 10px;
+}
+
+.random h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #565050;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.random a,
 .random p {
   font-family: 'Caveat', cursive;
-  font-size: clamp(20px, 4vw, 27px);
+  color: #565050;
+  text-decoration: none;
+  margin: 10px;
+  display: block;
+  font-size: clamp(18px, 3.5vw, 24px);
+}
+
+.social_grid {
+  display: none !important;
 }
 
 /* === ЗАГРУЗКА === */
@@ -691,43 +691,146 @@ img.emoji {
    МЕДИА-ЗАПРОСЫ - АДАПТИВНОСТЬ
    ============================================ */
 
-/* === МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 400px) === */
-@media (max-width: 400px) {
+/* === МОБИЛЬНЫЕ (до 600px) - Интересный дизайн === */
+@media (max-width: 600px) {
   .container {
-    padding: 15px 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: 
+      linear-gradient(135deg, rgba(242,235,232,0.95) 0%, rgba(247,242,238,0.95) 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" opacity="0.05">✈️</text></svg>');
+    background-size: cover, 80px 80px;
   }
 
   .main_text {
-    padding: 10px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 40px 20px;
+  }
+
+  .main_text::before {
+    content: "✈️";
+    display: block;
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .main_text h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #541f1d 0%, #e09f47 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .button_country {
-    padding: 5px 20px;
+    background: linear-gradient(135deg, #fff 0%, #f7f2ee 100%);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .button_country h2 {
+    font-size: 16px;
+  }
+
+  /* Декоративные элементы скрыты */
+  .machu, .mar, .plane, .spain, .jacaranda, 
+  .alpaca, .avocado, .mate, .rio, .italia {
+    display: none !important;
+  }
+
+  .fav_articles {
+    grid-template-columns: 1fr;
+  }
+
+  .about_me_content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer_map img {
+    width: 250px;
   }
 
   .note {
-    margin: 10px 5px;
+    margin: 15px 10px;
   }
 
-  .note_text img {
-    border-radius: 4px;
-  }
-}
-
-/* === ТЕЛЕФОНЫ (401px - 600px) === */
-@media (min-width: 401px) and (max-width: 600px) {
-  .about_me_content {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-
-  .about_me_content img {
-    max-height: 120px;
+  .note_grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* === ПЛАНШЕТЫ (601px - 900px) === */
+/* === ПЛАНШЕТЫ (601px - 900px) - Добавляем визуальный интерес === */
 @media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    background: 
+      linear-gradient(135deg, rgba(242,235,232,0.9) 0%, rgba(247,242,238,0.9) 100%);
+  }
+
+  .main_text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 60px 30px;
+    margin-top: 100px;
+  }
+
+  .main_text::before {
+    content: "🌎";
+    display: block;
+    font-size: 60px;
+    margin-bottom: 25px;
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .main_text h1 {
+    font-size: 40px;
+  }
+
+  .button_country h2 {
+    font-size: 18px;
+  }
+
+  /* Показываем пару картинок для визуального интереса */
+  .machu {
+    display: block;
+    width: 150px;
+    transform: rotate(-10deg);
+    top: 5%;
+    left: 2%;
+    opacity: 0.7;
+  }
+
+  .alpaca {
+    display: block;
+    width: 130px;
+    top: 5%;
+    right: 2%;
+    opacity: 0.7;
+  }
+
   .about_me_content {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -749,31 +852,72 @@ img.emoji {
   .footer {
     grid-template-columns: 1fr 1fr;
   }
+
+  .footer_map img {
+    width: 280px;
+  }
 }
 
-/* === МАЛЕНЬКИЕ ДЕСКТОПЫ (901px - 1100px) === */
-@media (min-width: 901px) and (max-width: 1100px) {
+/* === МАЛЕНЬКИЕ ДЕСКТОПЫ (901px - 1200px) === */
+@media (min-width: 901px) and (max-width: 1200px) {
   .container {
     position: relative;
   }
 
-  /* Показываем некоторые декоративные элементы */
-  .machu,
-  .alpaca {
-    display: block;
+  .main_text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
+  .main_text h1 {
+    font-size: 45px;
+  }
+
+  /* Показываем картинки аккуратно */
   .machu {
-    width: 200px;
-    transform: rotate(-16deg);
-    top: 5%;
+    display: block;
+    width: 180px;
+    transform: rotate(-12deg);
+    top: 3%;
     left: 2%;
   }
 
+  .mar {
+    display: block;
+    width: 200px;
+    top: 2%;
+    left: 30%;
+    transform: rotate(5deg);
+  }
+
   .alpaca {
-    width: 180px;
-    top: 5%;
+    display: block;
+    width: 160px;
+    top: 3%;
     right: 5%;
+  }
+
+  .rio {
+    display: block;
+    width: 180px;
+    transform: rotate(5deg);
+    bottom: 3%;
+    left: 2%;
+    top: auto;
+  }
+
+  .italia {
+    display: block;
+    width: 170px;
+    transform: rotate(-3deg);
+    right: 3%;
+    bottom: 3%;
+  }
+
+  /* Скрываем мелкие элементы чтобы не перегружать */
+  .avocado, .mate, .plane, .spain, .jacaranda {
+    display: none;
   }
 
   .about_me_content {
@@ -794,100 +938,129 @@ img.emoji {
     top: 80px;
   }
 
+  .map_country img {
+    max-width: 400px;
+  }
+
+  .note {
+    margin: 30px;
+  }
+
   .note_grid {
     grid-template-columns: 3fr 1fr;
     gap: 40px;
   }
 
   .footer {
-    grid-template-columns: 1fr 1fr 200px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer_map img {
+    width: 350px;
   }
 }
 
-/* === ДЕСКТОПЫ (1101px и выше) === */
-@media (min-width: 1101px) {
+/* === БОЛЬШИЕ ДЕСКТОПЫ (1201px и выше) === */
+@media (min-width: 1201px) {
   .container {
     position: relative;
+    min-height: 100vh;
   }
 
-  /* Показываем декоративные элементы */
+  .main_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+  }
+
+  .main_text h1 {
+    font-size: 50px;
+  }
+
+  .button_country h2 {
+    font-size: 22px;
+  }
+
+  /* Все декоративные картинки - аккуратное размещение */
   .machu {
     display: block;
-    width: 280px;
-    transform: rotate(-16deg);
-    top: -20px;
-    left: 0;
+    width: 220px;
+    transform: rotate(-14deg);
+    top: 2%;
+    left: 1%;
   }
 
   .mar {
     display: block;
-    width: 300px;
+    width: 240px;
     top: 0;
-    left: 35%;
-    transform: rotate(7deg);
+    left: 28%;
+    transform: rotate(6deg);
   }
 
   .alpaca {
     display: block;
-    width: 220px;
-    top: 0;
+    width: 180px;
+    top: 1%;
     right: 12%;
   }
 
   .jacaranda {
     display: block;
-    width: 220px;
-    transform: rotate(15deg);
-    top: 25%;
+    width: 180px;
+    transform: rotate(12deg);
+    top: 20%;
     right: 0;
   }
 
   .avocado {
     display: block;
-    width: 90px;
-    top: 5%;
-    left: 26%;
+    width: 70px;
+    top: 4%;
+    left: 23%;
   }
 
   .mate {
     display: block;
-    width: 90px;
-    right: 3%;
-    top: 7%;
+    width: 70px;
+    right: 2%;
+    top: 5%;
     transform: rotate(-3deg);
   }
 
   .rio {
     display: block;
-    width: 280px;
-    transform: rotate(6deg);
-    bottom: 5%;
-    left: 10px;
+    width: 220px;
+    transform: rotate(5deg);
+    bottom: 2%;
+    left: 1%;
     top: auto;
   }
 
   .italia {
     display: block;
-    width: 260px;
+    width: 200px;
     transform: rotate(-3deg);
-    right: 30px;
-    bottom: 20px;
+    right: 2%;
+    bottom: 2%;
   }
 
   .plane {
     display: block;
-    width: 80px;
+    width: 60px;
     top: auto;
-    bottom: 15%;
-    left: 47%;
+    bottom: 20%;
+    left: 45%;
     z-index: 100;
   }
 
   .spain {
     display: block;
-    width: 60px;
-    top: 45%;
-    left: 12%;
+    width: 50px;
+    top: 38%;
+    left: 8%;
   }
 
   .about_me_content {
@@ -901,7 +1074,8 @@ img.emoji {
   }
 
   .fav_article {
-    border: 1px solid #857c7c;
+    border: 1px solid #e0d8d4;
+    border-radius: 8px;
   }
 
   .country_grid {
@@ -917,7 +1091,7 @@ img.emoji {
   }
 
   .map_country img {
-    max-width: 500px;
+    max-width: 450px;
   }
 
   .note {
@@ -938,87 +1112,85 @@ img.emoji {
   }
 
   .footer {
-    grid-template-columns: 1fr 1fr 250px;
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    margin: 30px auto 40px;
   }
 
   .footer_map img {
-    max-width: 400px;
+    width: 350px;
   }
 }
 
-/* === БОЛЬШИЕ ЭКРАНЫ (1400px и выше) === */
-@media (min-width: 1400px) {
+/* === ОЧЕНЬ БОЛЬШИЕ ЭКРАНЫ (1500px+) === */
+@media (min-width: 1500px) {
   .machu {
-    width: 320px;
-    top: -40px;
+    width: 280px;
+    top: -10px;
+    left: 2%;
   }
 
   .mar {
-    width: 340px;
-    top: -5%;
+    width: 300px;
+    left: 30%;
   }
 
   .alpaca {
-    width: 250px;
-    right: 15%;
+    width: 220px;
+    right: 14%;
   }
 
   .jacaranda {
-    width: 250px;
-    top: 28%;
+    width: 220px;
+    top: 22%;
   }
 
   .avocado {
-    width: 100px;
+    width: 85px;
   }
 
   .mate {
-    width: 100px;
+    width: 85px;
   }
 
   .rio {
-    width: 330px;
-    bottom: 0;
+    width: 280px;
   }
 
   .italia {
-    width: 300px;
-    right: 50px;
-    bottom: 40px;
+    width: 250px;
+    right: 3%;
+    bottom: 3%;
   }
 
   .plane {
-    width: 90px;
+    width: 75px;
   }
 
   .spain {
-    width: 70px;
-    top: 48%;
-    left: 15%;
+    width: 60px;
+    top: 40%;
+    left: 10%;
   }
 
-  .note_text img {
-    max-width: 700px;
+  .main_text h1 {
+    font-size: 55px;
   }
 }
 
-/* === ПОДДЕРЖКА ЛАНДШАФТНОЙ ОРИЕНТАЦИИ НА ТЕЛЕФОНАХ === */
+/* === ЛАНДШАФТНАЯ ОРИЕНТАЦИЯ НА МОБИЛЬНЫХ === */
 @media (max-height: 500px) and (orientation: landscape) {
   .container {
     min-height: auto;
     padding: 30px 20px;
   }
 
-  .machu,
-  .mar,
-  .plane,
-  .spain,
-  .jacaranda,
-  .alpaca,
-  .avocado,
-  .mate,
-  .rio,
-  .italia {
+  .main_text::before {
+    display: none;
+  }
+
+  .machu, .mar, .plane, .spain, .jacaranda,
+  .alpaca, .avocado, .mate, .rio, .italia {
     display: none !important;
   }
 
@@ -1027,36 +1199,17 @@ img.emoji {
   }
 }
 
-/* === ТЁМНАЯ ТЕМА (опционально, если браузер поддерживает) === */
-@media (prefers-color-scheme: dark) {
-  /* Раскомментируйте если нужна поддержка тёмной темы */
-  /*
-  body {
-    background: #1a1a1a;
-    color: #f0f0f0;
-  }
-  
-  .container {
-    background: #2a2520;
-  }
-  
-  .menu_area {
-    background: #2a2520;
-  }
-  
-  .my_fav {
-    background: #2a2520;
-  }
-  */
-}
-
-/* === УМЕНЬШЕНИЕ АНИМАЦИИ ДЛЯ ПОЛЬЗОВАТЕЛЕЙ, КОТОРЫЕ ЭТО ПРЕДПОЧИТАЮТ === */
+/* === УМЕНЬШЕНИЕ АНИМАЦИИ === */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .pointer {
+    animation: none;
+  }
+
+  .main_text::before {
     animation: none;
   }
 
@@ -1077,18 +1230,9 @@ img.emoji {
 
 /* === ПЕЧАТЬ === */
 @media print {
-  .machu,
-  .mar,
-  .plane,
-  .spain,
-  .jacaranda,
-  .alpaca,
-  .avocado,
-  .mate,
-  .rio,
-  .italia,
-  .menu_area,
-  .pointer {
+  .machu, .mar, .plane, .spain, .jacaranda,
+  .alpaca, .avocado, .mate, .rio, .italia,
+  .menu_area, .pointer, .footer_social, .social_grid {
     display: none !important;
   }
 
