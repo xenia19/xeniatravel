@@ -31,6 +31,3 @@ XeniaTravel is a React-based SPA designed for exploring travel destinations and 
 * **Owl Carousel** — Photo gallery carousel
 * **Create React App** — Build pipeline and service worker
 * **GitHub Pages** — Deployment
-
-
-Хочешь, чтобы я это сделал?
