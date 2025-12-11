@@ -1,50 +1,60 @@
+/* ============================================
+   XENIA TRAVELS - ПОЛНОСТЬЮ АДАПТИВНЫЙ CSS
+   Переработано для всех размеров экранов
+   ============================================ */
+
+/* === БАЗОВЫЕ СТИЛИ === */
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Lora, serif;
-  color: #565050;
+  overflow-x: hidden;
 }
 
-/* --- Общие контейнеры --- */
+* {
+  box-sizing: border-box;
+}
+
+/* === ГЛАВНЫЙ КОНТЕЙНЕР (Hero Section) === */
 .container {
+  min-height: 100vh;
+  height: auto;
+  background: #f2ebe8;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: #f2ebe8;
-  position: relative;
-  padding: 0 10px;
+  padding: 20px;
 }
 
+/* === ГЛАВНЫЙ ТЕКСТ === */
 .main_text {
   text-align: center;
-  margin: 0 auto;
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 10;
+  padding: 20px;
 }
 
 .main_text h1 {
   font-family: 'Bad Script', cursive;
-  font-size: clamp(30px, 5vw, 60px);
-  letter-spacing: 4px;
+  font-size: clamp(28px, 8vw, 60px);
+  letter-spacing: 2px;
+  z-index: 100;
+  margin: 0;
+  line-height: 1.3;
 }
 
-.button_country {
-  display: inline-block;
-  margin: 20px auto 0;
-  padding: 10px 30px;
-  border: 1px solid #000;
-  border-radius: 35px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.button_country h2 {
-  font-family: Lora, serif;
-  font-size: clamp(13px, 2vw, 25px);
+.main_text h1:focus,
+.about_me_pic h1:focus,
+.logo_text h3:focus {
+  outline: none;
 }
 
 .main_text a {
@@ -52,14 +62,35 @@ body {
   color: #000;
 }
 
-/* --- Картинки и декоративные элементы --- */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* === КНОПКА ВЫБОРА СТРАНЫ === */
+.button_country {
+  text-align: center;
+  position: relative;
+  top: auto;
+  left: auto;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 35px;
+  padding: 5px 30px;
+  width: auto;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-/* Большие декоративные картинки */
+.button_country:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.button_country h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(14px, 3vw, 25px);
+  margin: 10px 0;
+}
+
+/* === ДЕКОРАТИВНЫЕ ИЗОБРАЖЕНИЯ (Hero) === */
+/* Все декоративные картинки скрыты по умолчанию, показываем только на больших экранах */
 .machu,
 .mar,
 .plane,
@@ -70,186 +101,1003 @@ img {
 .mate,
 .rio,
 .italia {
-  position: relative;
-  margin: 10px auto;
-  transform: none !important;
+  position: absolute;
+  display: none;
+  pointer-events: none;
 }
 
-/* --- Адаптивная сетка для карты --- */
-.map_main {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  width: 100%;
-}
-
-.map img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.map a {
-  font-size: clamp(14px, 2vw, 25px);
-  display: inline-block;
-  margin: 10px;
-  text-decoration: none;
-  color: #000;
-}
-
-/* --- Структура контента --- */
-.note_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 40px 10px;
-}
-
-.note_text img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* --- Избранные статьи и питомцы --- */
-.fav_articles,
-.fav_dog {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 20px 10px;
-}
-
-.fav_article img,
-.fav_dog img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.fav_article img:hover,
-.fav_dog img:hover {
-  transform: scale(1.05);
-}
-
-/* --- About me --- */
-.about_me_pic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.3)), url(/xeniatravel/static/media/43.56533e8a.jpg) center/cover no-repeat;
-}
-
-.about_me_pic h1 {
-  color: #fff;
-  font-size: clamp(20px, 5vw, 40px);
-  letter-spacing: 5px;
-  font-family: Montserrat, sans-serif;
-}
-
-.about_me_content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  justify-items: center;
-  align-items: center;
-  margin: 20px 10px;
-}
-
-.about_me_content img {
-  width: 100%;
-  max-width: 170px;
-  border-radius: 25px;
-}
-
-/* --- Меню --- */
+/* === МЕНЮ === */
 .menu_area {
   background: #f7f2ee;
   overflow: hidden;
-  height: auto;
+  min-height: 60px;
   text-align: center;
-  z-index: 100;
-  position: sticky;
-  top: 0;
+  z-index: 1000;
   padding: 10px 0;
+  width: 100%;
+}
+
+.menu_area.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticky + .logo_text {
+  padding-top: 80px;
 }
 
 .menu_area ul {
-  padding: 0;
+  width: auto;
   margin: 0;
-  list-style: none;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
 }
 
 .menu_area li {
   display: inline-block;
   text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
-  padding: 0 10px;
-  font-size: clamp(12px, 2vw, 14px);
-  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 23px;
+  padding: 5px 10px;
+  font-size: clamp(10px, 2vw, 14px);
+  letter-spacing: 1px;
 }
 
 .menu_area a {
   color: #000;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* --- Footer --- */
-.footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+.menu_area a:hover {
+  color: #e09f47;
+}
+
+/* === ЛОГОТИП === */
+.logo_text {
   text-align: center;
-  border-top: 1px dotted #eee;
-  padding: 20px 10px;
+  margin-top: 80px;
+  padding: 0 20px;
 }
 
-.footer_map img,
-.footer_social img {
+.logo_text h3 {
+  margin-top: 10px;
+  font-family: 'Bad Script', cursive;
+  font-size: clamp(24px, 5vw, 35px);
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+
+.logo_text h4 {
+  font-family: 'Lora', serif;
+  font-size: clamp(12px, 2.5vw, 16px);
+  margin-top: 5px;
+}
+
+/* === КАРТА И СТРАНЫ === */
+.map_main {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.countries_list {
+  padding: 20px 20px 40px !important;
+  margin-top: 40px;
+}
+
+.countries_list a {
+  font-family: 'Lora', serif;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 400;
+  color: #565050;
+  line-height: 40px !important;
+  text-decoration: none;
+}
+
+img.emoji {
+  width: clamp(24px, 5vw, 37px);
+  vertical-align: middle;
+  margin-bottom: 3px !important;
+}
+
+.map {
+  text-align: center;
+  margin: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.map img {
+  position: relative;
   max-width: 100%;
   height: auto;
+  margin: 0;
+  padding: 0;
 }
 
-/* --- Анимация и курсоры --- */
+.map a {
+  text-decoration: none;
+  font-size: clamp(14px, 3vw, 25px);
+  margin-bottom: 30px;
+  display: block;
+}
+
+/* Указатели на карте */
 .pointer {
   animation: symbol 1s infinite;
 }
 
 @keyframes symbol {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.2); }
-}
-
-/* --- Адаптивные media queries --- */
-@media (max-width: 470px) {
-  .main_text h1 { font-size: 25px; }
-  .button_country h2 { font-size: 13px; }
-  .about_me_pic { height: 200px; }
-  .about_me_content img { max-width: 130px; }
-  .fav_article img, .fav_dog img { max-width: 250px; }
-  .machu, .mar, .plane, .spain, .jacaranda, .alpaca, .avocado, .mate, .rio, .italia {
-    display: none;
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
   }
 }
 
-@media (min-width: 471px) and (max-width: 700px) {
-  .main_text h1 { font-size: 30px; }
-  .button_country h2 { font-size: 16px; }
-  .about_me_content img { max-width: 150px; }
-  .fav_article img, .fav_dog img { max-width: 280px; }
-  .machu, .plane, .spain, .jacaranda { display: none; }
+.map .argentina,
+.map .mexico,
+.map .italy,
+.map .europa,
+.map .norway,
+.map .peru,
+.map .colombia,
+.map .ecuador,
+.map .costarica,
+.map .uruguay,
+.map .chile,
+.map .brasil {
+  position: absolute;
+  font-size: clamp(10px, 2vw, 16px);
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
-  .main_text h1 { font-size: 35px; }
-  .button_country h2 { font-size: 20px; }
-  .about_me_content img { max-width: 170px; }
+.map .argentina { bottom: 15%; left: 28%; }
+.map .mexico { bottom: 40%; left: 21%; }
+.map .italy { top: 43%; left: 48%; }
+.map .europa { top: 37%; left: 46%; }
+.map .norway { top: 30%; left: 46%; }
+.map .peru { bottom: 25%; left: 27%; }
+.map .colombia { bottom: 35%; left: 27%; }
+.map .ecuador { bottom: 31%; left: 26%; }
+.map .costarica { bottom: 37%; left: 24%; }
+.map .uruguay { bottom: 14%; left: 30%; }
+.map .chile { bottom: 12%; left: 26%; }
+.map .brasil { bottom: 20%; left: 32%; }
+
+.pointers {
+  display: none;
 }
 
-@media (min-width: 1001px) {
-  .main_text h1 { font-size: 60px; }
-  .button_country h2 { font-size: 25px; }
+.countries {
+  margin-top: 50px;
+}
+
+/* === ГРИД ДЛЯ СТРАНИЦЫ СТРАНЫ === */
+.country_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.map_country {
+  display: none;
+}
+
+.map_country img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === ЗАМЕТКИ И СТАТЬИ === */
+.note {
+  margin: 20px;
+  padding: 0 10px;
+}
+
+.note_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.note_text h1,
+.note_text h3 {
+  font-family: 'Bad Script', sans-serif;
+  font-size: clamp(22px, 5vw, 30px);
+  margin: 0 0 15px 0;
+}
+
+.note_text p {
+  text-align: justify;
+  font-family: 'Lora', serif;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 400;
+  color: #565050;
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+.note_text img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.note h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: clamp(12px, 2.5vw, 16px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.note_column {
+  padding: 10px;
+  height: auto;
+}
+
+.note_column h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(13px, 2.5vw, 15px);
+  font-weight: 400;
+  color: #541f1d;
+  text-align: center;
+}
+
+.note_column a {
+  font-size: clamp(14px, 2.5vw, 17px) !important;
+  line-height: 28px;
+  color: #000;
+  margin: 10px !important;
+  display: block;
+}
+
+/* === СПИСОК СТАТЕЙ === */
+.article_list_item h2 a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: clamp(14px, 2.5vw, 17px);
+  margin: 20px 10px;
+  color: #541f1d;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.article_list_item h2 a:hover {
+  color: #e09f47;
+}
+
+.article_list_item h2 a:focus {
+  outline: none;
+}
+
+/* Эмодзи перед статьями */
+.article_list_mexico a:before { content: "🌶️"; display: inline-block; padding-right: 10px; }
+.article_list_ecuador a:before { content: "🍌"; display: inline-block; padding-right: 10px; }
+.article_list_costarica a:before { content: "🌊"; display: inline-block; padding-right: 10px; }
+.article_list_peru a:before { content: "\01F999"; display: inline-block; padding-right: 10px; }
+.article_list_italy a:before { content: "🍕"; display: inline-block; padding-right: 10px; }
+.article_list_chile a:before { content: "⛰️"; display: inline-block; padding-right: 10px; }
+.article_list_colombia a:before { content: "☕"; display: inline-block; padding-right: 10px; }
+.article_list_norway a:before { content: "⛸️"; display: inline-block; padding-right: 10px; }
+.article_list_europe a:before { content: "🏰"; display: inline-block; padding-right: 10px; }
+.article_list_argentina a:before { content: "\01F9C9"; display: inline-block; padding-right: 10px; }
+.article_list_brasil a:before { content: "⚽"; display: inline-block; padding-right: 10px; }
+
+/* === КАРУСЕЛЬ (OWL) === */
+.item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.owl-stage-outer {
+  text-align: center !important;
+}
+
+.owl-next,
+.owl-prev {
+  position: absolute;
+  top: 30%;
+}
+
+.owl-carousel {
+  font-size: clamp(24px, 5vw, 40px);
+}
+
+.owl-next { right: 2%; }
+.owl-prev { left: 2%; }
+
+.owl-nav {
+  display: block !important;
+}
+
+.owl-carousel .owl-next:hover,
+.owl-carousel .owl-prev:hover {
+  background: #f7f2ee !important;
+  color: #000 !important;
+}
+
+.owl-carousel .owl-item img {
+  text-align: center;
+  max-width: 100% !important;
+}
+
+/* === О СЕБЕ (ABOUT ME) === */
+.about_me_pic {
+  margin-top: 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(/xeniatravel/static/media/43.56533e8a.jpg);
+  min-height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.about_me_pic h1 {
+  color: #fff;
+  font-size: clamp(20px, 5vw, 40px);
+  text-transform: uppercase;
+  letter-spacing: clamp(3px, 1vw, 10px);
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.about_me_content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 20px;
+  min-height: auto;
+}
+
+.about_me_content img {
+  height: auto;
+  max-height: 170px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 25px;
+  margin: 0 auto;
+  display: block;
+}
+
+.about_me_info {
+  font-size: clamp(16px, 3vw, 20px);
+  font-family: 'Lora', serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about_me_info h2 {
+  font-size: clamp(18px, 3vw, 24px);
+}
+
+.about_me_text {
+  font-family: 'Lora', serif;
+  text-align: center;
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #565050;
+  padding: 0 15px;
+}
+
+.about_me_text h1 {
+  font-size: clamp(22px, 4vw, 30px);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about_me_picture {
+  text-align: center;
+}
+
+.about_me_picture img {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* === ИЗБРАННЫЕ СТАТЬИ === */
+.my_fav {
+  text-align: center;
+  color: #565050;
+  min-height: auto;
+  background: #f7f2ee;
+  padding: 20px 10px 40px;
+}
+
+.my_fav h1 {
+  font-family: 'Bad Script', sans-serif;
+  padding-top: 20px;
+  font-size: clamp(20px, 4vw, 28px);
+}
+
+.my_fav h2 {
+  font-size: clamp(15px, 2.5vw, 18px) !important;
+}
+
+.my_fav a {
+  color: #565050;
+  text-decoration: none;
+}
+
+.fav_articles {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 20px 10px;
+  gap: 20px;
+  align-content: center;
+}
+
+.fav_article {
+  font-family: 'Montserrat', sans-serif;
+  color: #565050;
+  border: none;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+}
+
+.fav_article img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.fav_article img:hover {
+  transform: scale(1.05);
+}
+
+.fav_article h2 {
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-family: 'Lora';
+}
+
+/* === СОБАКИ === */
+.dogs_wrapper {
+  text-align: center;
+  min-height: auto;
+  padding: 30px 20px;
+}
+
+.dogs_wrapper h1 {
+  padding-top: 30px;
+  font-family: 'Bad Script', sans-serif;
+  color: #565050;
+  font-size: clamp(20px, 4vw, 28px);
+}
+
+.fav_dog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.fav_dog img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  max-height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.fav_dog img:hover {
+  transform: scale(1.05);
+}
+
+/* === ФУТЕР === */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  border-top: 1px dotted #ddd;
+  margin-top: 30px;
+  padding: 30px 20px 40px;
+  gap: 30px;
+}
+
+.footer_map img {
+  max-width: 100%;
+  width: 350px;
+  height: auto;
+}
+
+.footer_map,
+.footer_social,
+.random {
+  text-align: center;
+}
+
+.footer_map h2,
+.footer_social h2,
+.random h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #565050;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.footer_map a,
+.footer_map p,
+.footer_social a,
+.footer_social p,
+.random a,
+.random p {
+  font-family: 'Montserrat', sans-serif;
+  color: #565050;
+  text-decoration: none;
+  margin: 10px;
+  display: block;
+}
+
+.social_grid {
+  font-family: 'Montserrat', sans-serif;
+  color: #565050;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: clamp(24px, 4vw, 29px);
+}
+
+.random p {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(20px, 4vw, 27px);
+}
+
+/* === ЗАГРУЗКА === */
+.loading {
+  font-size: clamp(16px, 3vw, 20px);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+/* === УТИЛИТЫ === */
+.grid {
+  display: grid;
+}
+
+/* ============================================
+   МЕДИА-ЗАПРОСЫ - АДАПТИВНОСТЬ
+   ============================================ */
+
+/* === МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 400px) === */
+@media (max-width: 400px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .main_text {
+    padding: 10px;
+  }
+
+  .button_country {
+    padding: 5px 20px;
+  }
+
+  .note {
+    margin: 10px 5px;
+  }
+
+  .note_text img {
+    border-radius: 4px;
+  }
+}
+
+/* === ТЕЛЕФОНЫ (401px - 600px) === */
+@media (min-width: 401px) and (max-width: 600px) {
+  .about_me_content {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .about_me_content img {
+    max-height: 120px;
+  }
+}
+
+/* === ПЛАНШЕТЫ (601px - 900px) === */
+@media (min-width: 601px) and (max-width: 900px) {
+  .about_me_content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .fav_articles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .country_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .note_grid {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* === МАЛЕНЬКИЕ ДЕСКТОПЫ (901px - 1100px) === */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .container {
+    position: relative;
+  }
+
+  /* Показываем некоторые декоративные элементы */
+  .machu,
+  .alpaca {
+    display: block;
+  }
+
+  .machu {
+    width: 200px;
+    transform: rotate(-16deg);
+    top: 5%;
+    left: 2%;
+  }
+
+  .alpaca {
+    width: 180px;
+    top: 5%;
+    right: 5%;
+  }
+
+  .about_me_content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fav_articles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .country_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map_country {
+    display: block;
+    position: sticky;
+    top: 80px;
+  }
+
+  .note_grid {
+    grid-template-columns: 3fr 1fr;
+    gap: 40px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr 200px;
+  }
+}
+
+/* === ДЕСКТОПЫ (1101px и выше) === */
+@media (min-width: 1101px) {
+  .container {
+    position: relative;
+  }
+
+  /* Показываем декоративные элементы */
+  .machu {
+    display: block;
+    width: 280px;
+    transform: rotate(-16deg);
+    top: -20px;
+    left: 0;
+  }
+
+  .mar {
+    display: block;
+    width: 300px;
+    top: 0;
+    left: 35%;
+    transform: rotate(7deg);
+  }
+
+  .alpaca {
+    display: block;
+    width: 220px;
+    top: 0;
+    right: 12%;
+  }
+
+  .jacaranda {
+    display: block;
+    width: 220px;
+    transform: rotate(15deg);
+    top: 25%;
+    right: 0;
+  }
+
+  .avocado {
+    display: block;
+    width: 90px;
+    top: 5%;
+    left: 26%;
+  }
+
+  .mate {
+    display: block;
+    width: 90px;
+    right: 3%;
+    top: 7%;
+    transform: rotate(-3deg);
+  }
+
+  .rio {
+    display: block;
+    width: 280px;
+    transform: rotate(6deg);
+    bottom: 5%;
+    left: 10px;
+    top: auto;
+  }
+
+  .italia {
+    display: block;
+    width: 260px;
+    transform: rotate(-3deg);
+    right: 30px;
+    bottom: 20px;
+  }
+
+  .plane {
+    display: block;
+    width: 80px;
+    top: auto;
+    bottom: 15%;
+    left: 47%;
+    z-index: 100;
+  }
+
+  .spain {
+    display: block;
+    width: 60px;
+    top: 45%;
+    left: 12%;
+  }
+
+  .about_me_content {
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 50vh;
+  }
+
+  .fav_articles {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px 40px;
+  }
+
+  .fav_article {
+    border: 1px solid #857c7c;
+  }
+
+  .country_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .map_country {
+    display: block;
+    margin-top: 20px;
+    position: sticky;
+    top: 80px;
+  }
+
+  .map_country img {
+    max-width: 500px;
+  }
+
+  .note {
+    margin: 40px;
+  }
+
+  .note_grid {
+    grid-template-columns: 4fr 1fr;
+    gap: 50px;
+  }
+
+  .note_text p {
+    max-width: 700px;
+  }
+
+  .article_list_item h2 a {
+    margin: 40px 60px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr 250px;
+  }
+
+  .footer_map img {
+    max-width: 400px;
+  }
+}
+
+/* === БОЛЬШИЕ ЭКРАНЫ (1400px и выше) === */
+@media (min-width: 1400px) {
+  .machu {
+    width: 320px;
+    top: -40px;
+  }
+
+  .mar {
+    width: 340px;
+    top: -5%;
+  }
+
+  .alpaca {
+    width: 250px;
+    right: 15%;
+  }
+
+  .jacaranda {
+    width: 250px;
+    top: 28%;
+  }
+
+  .avocado {
+    width: 100px;
+  }
+
+  .mate {
+    width: 100px;
+  }
+
+  .rio {
+    width: 330px;
+    bottom: 0;
+  }
+
+  .italia {
+    width: 300px;
+    right: 50px;
+    bottom: 40px;
+  }
+
+  .plane {
+    width: 90px;
+  }
+
+  .spain {
+    width: 70px;
+    top: 48%;
+    left: 15%;
+  }
+
+  .note_text img {
+    max-width: 700px;
+  }
+}
+
+/* === ПОДДЕРЖКА ЛАНДШАФТНОЙ ОРИЕНТАЦИИ НА ТЕЛЕФОНАХ === */
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .machu,
+  .mar,
+  .plane,
+  .spain,
+  .jacaranda,
+  .alpaca,
+  .avocado,
+  .mate,
+  .rio,
+  .italia {
+    display: none !important;
+  }
+
+  .about_me_pic {
+    min-height: 150px;
+  }
+}
+
+/* === ТЁМНАЯ ТЕМА (опционально, если браузер поддерживает) === */
+@media (prefers-color-scheme: dark) {
+  /* Раскомментируйте если нужна поддержка тёмной темы */
+  /*
+  body {
+    background: #1a1a1a;
+    color: #f0f0f0;
+  }
+  
+  .container {
+    background: #2a2520;
+  }
+  
+  .menu_area {
+    background: #2a2520;
+  }
+  
+  .my_fav {
+    background: #2a2520;
+  }
+  */
+}
+
+/* === УМЕНЬШЕНИЕ АНИМАЦИИ ДЛЯ ПОЛЬЗОВАТЕЛЕЙ, КОТОРЫЕ ЭТО ПРЕДПОЧИТАЮТ === */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pointer {
+    animation: none;
+  }
+
+  .fav_article img,
+  .fav_dog img {
+    transition: none;
+  }
+
+  .fav_article img:hover,
+  .fav_dog img:hover {
+    transform: none;
+  }
+
+  .button_country {
+    transition: none;
+  }
+}
+
+/* === ПЕЧАТЬ === */
+@media print {
+  .machu,
+  .mar,
+  .plane,
+  .spain,
+  .jacaranda,
+  .alpaca,
+  .avocado,
+  .mate,
+  .rio,
+  .italia,
+  .menu_area,
+  .pointer {
+    display: none !important;
+  }
+
+  .container {
+    min-height: auto;
+    background: white;
+  }
+
+  body {
+    font-size: 12pt;
+  }
 }
