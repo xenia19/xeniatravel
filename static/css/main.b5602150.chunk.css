@@ -1,9 +1,4 @@
-/* ============================================
-   XENIA TRAVELS - АДАПТИВНЫЙ CSS v3
-   Исправлено позиционирование
-   ============================================ */
 
-/* === БАЗОВЫЕ СТИЛИ === */
 html {
   scroll-behavior: smooth;
 }
@@ -153,8 +148,8 @@ body {
   position: absolute;
   width: 330px;
   transform: rotate(6deg);
-  bottom: 20px;
-  left: -30px;
+  bottom: 50px;
+  left: 30px;
   top: auto;
 }
 
@@ -769,7 +764,7 @@ img.emoji {
   .rio {
     width: 330px;
     bottom: 40px;
-    left: 10px;
+    left: 50px;
   }
 
   .italia {
@@ -803,8 +798,9 @@ img.emoji {
   }
 
   .rio {
-    width: 280px;
-    left: -20px;
+    width: 260px;
+    left: 20px;
+    bottom: 30px;
   }
 
   .italia {
@@ -837,39 +833,39 @@ img.emoji {
   }
 
   .machu {
-    width: 220px;
-    top: 0;
-    left: -10px;
+    width: 200px;
+    top: 10px;
+    left: 0;
   }
 
   .mar {
-    width: 250px;
-    left: 28%;
+    width: 220px;
+    left: 25%;
     top: 0;
   }
 
   .alpaca {
-    width: 180px;
-    right: 8%;
-    top: 0;
+    width: 160px;
+    right: 5%;
+    top: 10px;
   }
 
   .jacaranda {
-    width: 180px;
-    top: 25%;
-    right: -15px;
+    width: 160px;
+    top: 22%;
+    right: -10px;
   }
 
   .rio {
-    width: 230px;
-    bottom: 10px;
-    left: -20px;
+    width: 200px;
+    bottom: 20px;
+    left: 10px;
   }
 
   .italia {
-    width: 200px;
-    right: 0;
-    bottom: 10px;
+    width: 180px;
+    right: 10px;
+    bottom: 20px;
   }
 
   .avocado,
@@ -880,7 +876,7 @@ img.emoji {
   }
 }
 
-/* === ПЛАНШЕТЫ (768px - 999px) === */
+/* === ПЛАНШЕТЫ iPad (768px - 999px) === */
 @media (min-width: 768px) and (max-width: 999px) {
   .container {
     display: flex;
@@ -895,11 +891,12 @@ img.emoji {
     left: auto;
     transform: none;
     padding: 20px;
-    margin-top: 50px;
+    z-index: 100;
   }
 
   .main_text h1 {
-    font-size: 40px;
+    font-size: 38px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
   }
 
   .button_country {
@@ -908,38 +905,44 @@ img.emoji {
     left: auto;
     transform: none;
     margin-top: 20px;
+    z-index: 100;
   }
 
   .button_country h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  /* Показываем только 2 картинки */
-  .machu {
-    position: absolute;
-    width: 150px;
-    top: 20px;
-    left: 10px;
-    transform: rotate(-10deg);
-  }
-
-  .alpaca {
-    position: absolute;
-    width: 130px;
-    top: 20px;
-    right: 10px;
-    transform: rotate(5deg);
-  }
-
+  /* ВСЕ картинки скрыты на iPad для чистого вида */
+  .machu,
   .mar,
   .plane,
   .spain,
   .jacaranda,
+  .alpaca,
   .avocado,
   .mate,
   .rio,
   .italia {
     display: none !important;
+  }
+
+  /* Добавляем декоративный фон для iPad */
+  .container::before {
+    content: "✈️";
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: 40px;
+    opacity: 0.3;
+  }
+
+  .container::after {
+    content: "🌎";
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    font-size: 50px;
+    opacity: 0.3;
   }
 
   .about_me_content {
@@ -977,6 +980,10 @@ img.emoji {
   .footer {
     grid-template-columns: 1fr;
   }
+
+  .dogs_wrapper {
+    min-height: auto;
+  }
 }
 
 /* === БОЛЬШИЕ МОБИЛЬНЫЕ (600px - 767px) === */
@@ -997,7 +1004,7 @@ img.emoji {
   }
 
   .main_text h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .button_country {
@@ -1009,35 +1016,40 @@ img.emoji {
   }
 
   .button_country h2 {
-    font-size: 18px;
+    font-size: 17px;
   }
 
-  /* Показываем 2 маленькие картинки */
-  .machu {
-    position: absolute;
-    width: 120px;
-    top: 15px;
-    left: 5px;
-    transform: rotate(-8deg);
-  }
-
-  .alpaca {
-    position: absolute;
-    width: 100px;
-    top: 15px;
-    right: 5px;
-    transform: rotate(5deg);
-  }
-
+  /* Все картинки скрыты */
+  .machu,
   .mar,
   .plane,
   .spain,
   .jacaranda,
+  .alpaca,
   .avocado,
   .mate,
   .rio,
   .italia {
     display: none !important;
+  }
+
+  /* Декоративные эмодзи */
+  .container::before {
+    content: "🌴";
+    position: absolute;
+    top: 12%;
+    left: 8%;
+    font-size: 35px;
+    opacity: 0.4;
+  }
+
+  .container::after {
+    content: "🗺️";
+    position: absolute;
+    bottom: 15%;
+    right: 8%;
+    font-size: 40px;
+    opacity: 0.4;
   }
 
   .about_me_content {
@@ -1077,7 +1089,7 @@ img.emoji {
   }
 }
 
-/* === МОБИЛЬНЫЕ (до 599px) === */
+/* === МОБИЛЬНЫЕ (до 599px) - КРАСИВЫЙ ДИЗАЙН === */
 @media (max-width: 599px) {
   .container {
     height: 100vh;
@@ -1086,6 +1098,38 @@ img.emoji {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    position: relative;
+  }
+
+  /* Декоративный фон с эмодзи */
+  .container::before {
+    content: "✈️";
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 30px;
+    opacity: 0.5;
+    animation: float1 4s ease-in-out infinite;
+  }
+
+  .container::after {
+    content: "🌍";
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    font-size: 35px;
+    opacity: 0.5;
+    animation: float2 5s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
   }
 
   .main_text {
@@ -1094,11 +1138,22 @@ img.emoji {
     left: auto;
     transform: none;
     text-align: center;
+    z-index: 10;
+  }
+
+  /* Декоративная линия над текстом */
+  .main_text::before {
+    content: "🌎 🗺️ 🧳";
+    display: block;
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 10px;
   }
 
   .main_text h1 {
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: 2px;
+    line-height: 1.3;
   }
 
   .button_country {
@@ -1106,14 +1161,17 @@ img.emoji {
     top: auto;
     left: auto;
     transform: none;
-    margin-top: 20px;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #fff 0%, #f7f2ee 100%);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #d4c4bc;
   }
 
   .button_country h2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
-  /* Скрываем все декоративные картинки */
+  /* Скрываем все фото */
   .machu,
   .mar,
   .plane,
@@ -1133,16 +1191,16 @@ img.emoji {
   }
 
   img.emoji {
-    width: 18px;
+    width: 20px;
   }
 
   .countries_list a {
     font-size: 14px;
-    line-height: 35px !important;
+    line-height: 38px !important;
   }
 
   .logo_text h3 {
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 10px;
   }
 
@@ -1151,7 +1209,7 @@ img.emoji {
   }
 
   .menu_area li {
-    font-size: 12px;
+    font-size: 11px;
     padding: 5px 8px;
   }
 
@@ -1204,7 +1262,7 @@ img.emoji {
   }
 
   .about_me_pic h1 {
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 5px;
   }
 
@@ -1234,7 +1292,7 @@ img.emoji {
   }
 
   .my_fav h2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .fav_articles {
@@ -1266,11 +1324,11 @@ img.emoji {
   }
 
   .footer_map img {
-    max-width: 280px;
+    max-width: 250px;
   }
 
   .random p {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .pointer a {
@@ -1280,8 +1338,13 @@ img.emoji {
 
 /* === ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (до 400px) === */
 @media (max-width: 400px) {
+  .main_text::before {
+    font-size: 24px;
+    letter-spacing: 8px;
+  }
+
   .main_text h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .button_country h2 {
@@ -1293,16 +1356,25 @@ img.emoji {
   }
 
   .menu_area li {
-    font-size: 11px;
+    font-size: 10px;
     padding: 4px 6px;
   }
 
   .logo_text h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .about_me_pic h1 {
-    font-size: 20px;
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .container::before {
+    font-size: 25px;
+  }
+
+  .container::after {
+    font-size: 28px;
   }
 }
 
@@ -1312,6 +1384,15 @@ img.emoji {
     height: auto;
     min-height: 100vh;
     padding: 30px 20px;
+  }
+
+  .container::before,
+  .container::after {
+    display: none;
+  }
+
+  .main_text::before {
+    display: none;
   }
 
   .machu,
@@ -1347,6 +1428,11 @@ img.emoji {
     animation: none;
   }
 
+  .container::before,
+  .container::after {
+    animation: none;
+  }
+
   .fav_article img,
   .fav_dog img {
     transition: none;
@@ -1379,6 +1465,11 @@ img.emoji {
   .footer_social,
   .social_grid {
     display: none !important;
+  }
+
+  .container::before,
+  .container::after {
+    display: none;
   }
 
   .container {
